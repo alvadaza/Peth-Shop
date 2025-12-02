@@ -1,0 +1,149 @@
+/* ----- CONTENEDOR PRINCIPAL ----- */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+}
+
+/* ----- LOGO + TITULO ----- */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  width: 60px;
+  height: auto;
+}
+
+.store-name {
+  font-size: 1.8rem;
+  margin: 0;
+  font-weight: 500;
+  color: var(--secondary);
+}
+
+/* ----- NAVEGACIÓN ----- */
+.nav {
+  display: flex;
+  gap: 40px;
+}
+
+.nav a {
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+.navActive {
+  color: var(--secondary);
+}
+
+.navinactive {
+  color: var(--primary-dark);
+}
+/* ----- CARRITO ----- */
+.cart-btn {
+  background: var(--secondary);
+  color: var(--primary-dark);
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.2s;
+  margin-right: 40px;
+}
+
+.cart-btn:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* =====================================================
+   RESPONSIVE DESIGN
+===================================================== */
+
+/* Tablets y pantallas medianas */
+@media (max-width: 900px) {
+  .header {
+    position: absolute;
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .nav {
+    gap: 15px;
+  }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+  .nav a {
+    font-size: 1rem;
+  }
+
+  .cart-btn {
+    font-size: 0.95rem;
+  }
+  .logo {
+    display: none;
+  }
+  .store-name {
+    display: none;
+  }
+  .cart-btn {
+    margin: auto;
+  }
+}
+
+/* Celulares muy pequeños */
+@media (max-width: 420px) {
+  .header-left {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .nav {
+    gap: 40px;
+  }
+  .logo {
+    display: none;
+  }
+  .store-name {
+    display: none;
+  }
+}
+@media (orientation: landscape) and (max-width: 1200px) {
+  .logo,
+  .store-name {
+    display: none;
+  }
+  .nav {
+    gap: 40px;
+  }
+  .cart-btn {
+    margin: auto;
+    margin-top: -40px;
+    margin-left: 10px;
+  }
+  .header {
+    height: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+}

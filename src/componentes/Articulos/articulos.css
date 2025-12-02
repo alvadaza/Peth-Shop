@@ -1,0 +1,122 @@
+.articulos-section {
+  padding: 50px 20px;
+  background: var(--secondary);
+}
+
+.articulos-title {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--primary-dark);
+  margin-bottom: 30px;
+}
+
+.articulos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.articulo-card {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  text-align: center;
+  border: 1px solid var(--hover);
+  transition: 0.3s ease;
+}
+
+.articulo-card:hover {
+  background: var(--hover);
+  transform: translateY(-4px);
+}
+
+.articulo-card img {
+  width: 80%;
+  height: auto;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+  margin-bottom: 15px;
+}
+
+.articulo-card h4 {
+  font-size: 1.3rem;
+  color: var(--primary-dark);
+  margin-bottom: 8px;
+}
+
+.articulo-card p {
+  font-size: 1rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .articulos-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+  }
+
+  .articulo-card img {
+    height: 150px;
+  }
+
+  .articulo-card h4 {
+    font-size: 1.1rem;
+  }
+
+  .articulo-card p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .articulos-title {
+    font-size: 1.6rem;
+  }
+
+  .articulos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .articulo-card {
+    padding: 15px;
+  }
+
+  .articulo-card img {
+    height: 140px;
+  }
+
+  .articulo-card h4 {
+    font-size: 1rem;
+  }
+
+  .articulo-card p {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 360px) {
+  .about-text h2,
+  .articulos-title {
+    font-size: 1.4rem;
+  }
+
+  .about-text p,
+  .articulo-card p {
+    font-size: 0.85rem;
+  }
+
+  .articulo-card img {
+    height: 120px;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 1200px) {
+  @media (orientation: landscape) and (max-width: 1200px) {
+    .articulos-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+  }
+}

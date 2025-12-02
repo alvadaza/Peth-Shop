@@ -1,0 +1,175 @@
+/* =======================================================
+   4. HERO (NAV)
+   ======================================================= */
+nav.hero {
+  width: 100vw;
+  height: 100vh;
+  background: url("https://res.cloudinary.com/dl7kjajkv/image/upload/v1758056459/mascotas/freepik__que-la-imagen-se-vertical__21458_rqaikv.png")
+    no-repeat center center/cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 80px;
+}
+nav .hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+}
+nav .hero-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  max-width: 800px;
+  padding: 20px;
+}
+nav .hero-content h2 {
+  font-size: 3.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}
+nav .hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  color: var(--color_hover);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+nav .hero-content .btn {
+  padding: 12px 30px;
+  border: 2px solid var(--color_hover);
+  color: var(--color_hover);
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 50px;
+  transition: all 0.3s;
+  display: inline-block;
+  margin: 10px;
+}
+nav .hero-content .btn:hover {
+  background: var(--color_hover);
+  color: #000;
+}
+nav .hero-content img {
+  height: 20rem;
+  width: auto;
+  margin-bottom: 30px;
+  transform: translateX(-130%);
+}
+
+/* =======================================================
+   5. TOP BAR (Logo + Login)
+   ======================================================= */
+nav .top-bar {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  z-index: 3;
+}
+nav .top-bar .login {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--hover);
+  text-decoration: none;
+}
+nav .top-bar .login-btn {
+  padding: 10px 20px;
+  border-radius: 50px;
+  background: var(--card-bg);
+  color: var(--primary);
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+nav .top-bar .login-btn:hover {
+  background: var(--color_hover);
+  color: #000;
+}
+
+@media (max-width: 1200px) {
+  .login-btn {
+    padding: 5px 10px;
+    border-radius: 30px;
+    font-weight: normal;
+  }
+  .hero-content .logo {
+    font-size: 1rem;
+  }
+  .hero-content img {
+    height: 10rem;
+    margin-bottom: 10px;
+  }
+  .hero-content h1 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-top: 10px;
+    letter-spacing: 2px;
+  }
+  .hero-content img {
+    height: 10rem;
+    width: auto;
+    margin-bottom: 30px;
+    transform: translateY(250%);
+  }
+}
+@media (orientation: landscape) and (max-width: 1200px) {
+  .hero-content {
+    margin-bottom: -50px;
+  }
+  .hero-content h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+  }
+  .hero-content p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .hero-content .logo {
+    height: 10rem;
+    width: auto;
+    margin-bottom: 30px;
+    transform: translateX(-130%) translatey(80%);
+  }
+  .top-bar {
+    margin-top: -10px;
+  }
+}
+@media (max-width: 780px) {
+  .hero {
+    padding-top: 5px;
+  }
+  .hero-content .logo {
+    height: 10rem;
+    width: auto;
+    margin-bottom: 5px;
+    transform: translateY(250%);
+  }
+  .top-bar {
+    margin-top: 50px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+@media (orientation: landscape) and (max-width: 920px) {
+  .hero-content .logo {
+    height: 8rem;
+    transform: translateX(-250%) translatey(80%);
+  }
+}
