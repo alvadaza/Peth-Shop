@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useAuth } from "../hooks/useAuth";
 import { useNavigate } from "react-router-dom";
-import "./login.css";
+import "./Login.css";
 
 export default function LoginRegister() {
   const [isActive, setIsActive] = useState(false);

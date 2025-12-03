@@ -1,5 +1,5 @@
 .container-login {
-  background: #fff;
+  background: var(--secondary);
   width: 900px;
   max-width: 100%;
   min-height: 550px;
@@ -57,6 +57,7 @@ form input {
   background: #eee;
   border: none;
   border-radius: 6px;
+  color: var(--text);
 }
 
 form button {
@@ -64,7 +65,7 @@ form button {
   margin-top: 10px;
   border-radius: 20px;
   border: none;
-  background: #7d2ae8;
+  background: var(--primary-dark);
   color: #fff;
   font-size: 1rem;
   cursor: pointer;
@@ -87,7 +88,7 @@ form button {
 }
 
 .overlay {
-  background: linear-gradient(135deg, #6c0ee0, #300a79);
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
   color: white;
   position: relative;
   left: -100%;
