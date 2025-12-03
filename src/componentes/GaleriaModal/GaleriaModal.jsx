@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { useAuth } from "../../hooks/useAuth";
 import "./GaleriaModal.css";
 
 function GaleriaModal({ abierto, producto, onCerrar, onAgregarCarrito }) {
   const [cantidad, setCantidad] = useState(1);
   const [stockLocal, setStockLocal] = useState(0); // ← ESTA LÍNEA TE FALTABA
   const [imagenPrincipal, setImagenPrincipal] = useState("");
-
+  const { user } = useAuth();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (!abierto || !producto) return;
@@ -39,12 +40,6 @@ function GaleriaModal({ abierto, producto, onCerrar, onAgregarCarrito }) {
 
   const restar = () => {
     if (cantidad > 1) setCantidad(cantidad - 1);
-  };
-
-  const agregarAlCarrito = () => {
-    onAgregarCarrito(producto, cantidad);
-    setCantidad(1);
-    setTimeout(onCerrar, 800);
   };
 
   return (
@@ -100,11 +95,32 @@ function GaleriaModal({ abierto, producto, onCerrar, onAgregarCarrito }) {
         </div>
 
         <button
-          className="btn-agregar"
-          onClick={agregarAlCarrito}
-          disabled={stockLocal <= 0}
+          className={`btn-agregar ${!user ? "deshabilitado" : ""}`}
+          onClick={() => {
+            if (!user) {
+              // ALERTA BONITA PERSONALIZADA
+              const confirmar = window.confirm(
+                "Debes iniciar sesión o registrarte para agregar productos al carrito.\n\n¿Quieres ir al login ahora?"
+              );
+              if (confirmar) {
+                // Redirige al login (y vuelve después si quieres)
+                window.location.href = "/login";
+              }
+              return;
+            }
+
+            // Si está logueado → agregar normal
+            onAgregarCarrito(producto, cantidad);
+            setCantidad(1);
+            setTimeout(onCerrar, 800);
+          }}
+          disabled={stockLocal <= 0 || !user} // ← deshabilitado si no hay stock o no está logueado
         >
-          {stockLocal <= 0 ? "Sin Stock" : "Agregar al Carrito"}
+          {stockLocal <= 0
+            ? "Sin Stock"
+            : !user
+            ? "Inicia sesión para comprar"
+            : "Agregar al Carrito"}
         </button>
       </article>
     </section>
