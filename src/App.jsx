@@ -5,6 +5,7 @@ import RouterApp from "./router/Router";
 import "./App.css";
 import { CartProvider } from "./context/CartContext";
 import Loader from "./componentes/Loader/Loader";
+import AuthProvider from "./context/AuthProvider";
 
 function App() {
   const [modalAbierto, setModalAbierto] = useState(null);
@@ -33,19 +34,21 @@ function App() {
   });
   return (
     <CartProvider>
-      <BrowserRouter>
-        <Suspense fallback={<Loader />}>
-          <Routes>
-            {routes.map((route) => (
-              <Route
-                key={route.path}
-                path={route.path}
-                element={route.element}
-              />
-            ))}
-          </Routes>
-        </Suspense>
-      </BrowserRouter>
+      <AuthProvider>
+        <BrowserRouter>
+          <Suspense fallback={<Loader />}>
+            <Routes>
+              {routes.map((route) => (
+                <Route
+                  key={route.path}
+                  path={route.path}
+                  element={route.element}
+                />
+              ))}
+            </Routes>
+          </Suspense>
+        </BrowserRouter>
+      </AuthProvider>
     </CartProvider>
   );
 }

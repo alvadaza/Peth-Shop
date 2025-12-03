@@ -11,7 +11,6 @@ nav.hero {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding-top: 80px;
 }
 nav .hero::before {
   content: "";
@@ -68,33 +67,26 @@ nav .hero-content img {
 /* =======================================================
    5. TOP BAR (Logo + Login)
    ======================================================= */
-nav .top-bar {
+.top-bar {
   position: absolute;
   top: 80px;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 30px;
-  z-index: 3;
+  margin: 0;
 }
-nav .top-bar .login {
+.top-bar .login {
   font-size: 1.5rem;
   font-weight: bold;
-  color: var(--hover);
+  color: var(--texty);
   text-decoration: none;
+  margin: auto;
 }
-nav .top-bar .login-btn {
-  padding: 10px 20px;
-  border-radius: 50px;
-  background: var(--card-bg);
+.top-bar {
   color: var(--primary);
   font-weight: bold;
   text-decoration: none;
   transition: 0.3s;
+  margin: auto;
 }
-nav .top-bar .login-btn:hover {
+.top-bar:hover {
   background: var(--color_hover);
   color: #000;
 }

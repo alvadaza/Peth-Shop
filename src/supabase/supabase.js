@@ -12,16 +12,3 @@ console.log("Key:", supabaseAnonKey ? "✅" : "❌");
 
 // Crear cliente
 export const supabase = createClient(supabaseUrl, supabaseAnonKey);
-
-// Verificar conexión
-supabase
-  .from("productos")
-  .select("count", { count: "exact" })
-  .then(({ count, error }) => {
-    if (error) {
-      console.error("❌ Error conectando a Supabase:", error.message);
-    } else {
-      console.log("✅ Supabase conectado correctamente");
-      console.log("📊 Total productos en BD:", count);
-    }
-  });

@@ -1,0 +1,291 @@
+.container-login {
+  background: #fff;
+  width: 900px;
+  max-width: 100%;
+  min-height: 550px;
+  margin: auto;
+  margin-top: 150px;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.5s ease;
+}
+
+/* FORMULARIOS */
+.form-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  text-align: center;
+  width: 50%;
+}
+
+.sign-in-container {
+  left: 0;
+  z-index: 2;
+}
+
+.sign-up-container {
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+}
+
+.container-login.right-panel-active .sign-in-container {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.container-login.right-panel-active .sign-up-container {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+}
+
+/* FORM INPUTS */
+form input {
+  width: 80%;
+  padding: 12px;
+  margin: 8px 0;
+  background: #eee;
+  border: none;
+  border-radius: 6px;
+}
+
+form button {
+  padding: 12px 30px;
+  margin-top: 10px;
+  border-radius: 20px;
+  border: none;
+  background: #7d2ae8;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* PANEL MORADO */
+.overlay-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.6s ease-in-out;
+  z-index: 100;
+}
+
+.container-login.right-panel-active .overlay-container {
+  transform: translateX(-100%);
+}
+
+.overlay {
+  background: linear-gradient(135deg, #6c0ee0, #300a79);
+  color: white;
+  position: relative;
+  left: -100%;
+  height: 100%;
+  width: 200%;
+  transition: transform 0.6s ease-in-out;
+}
+
+.container-login.right-panel-active .overlay {
+  transform: translateX(50%);
+}
+
+.overlay-panel {
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  margin-top: 160px;
+  padding: 0 100px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.overlay-left {
+  transform: translateX(-20%);
+}
+
+.overlay-right {
+  right: 0;
+  transform: translateX(20%);
+}
+
+button.ghost {
+  background: transparent;
+  width: 50%;
+  margin: auto;
+  margin-bottom: 340px;
+  border: 2px solid #fff;
+  border-radius: 20px;
+  padding: 12px 30px;
+  color: #fff;
+}
+
+@media (max-width: 780px) {
+  .container-login {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: white;
+    position: relative;
+    overflow: hidden;
+  }
+  .sign-up-container {
+    transform: translateY(100%);
+  }
+  .sign-in-container {
+    transform: translateY(0);
+  }
+
+  .container-login.right-panel-active .sign-in-container {
+    transform: translateY(0);
+    opacity: 0;
+  }
+
+  .container-login.right-panel-active .sign-up-container {
+    transform: translateY(0);
+    opacity: 1;
+    z-index: 5;
+  }
+  /* Header morado */
+  .mobile-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 90%;
+    background: linear-gradient(135deg, #7d2ae8, #5e17eb);
+    color: white;
+    text-align: center;
+    padding: 70px 20px 50px;
+    z-index: 10;
+    border-radius: 0 0 30px 30px;
+  }
+  .mobile-header h1 {
+    font-size: 1.5rem;
+    margin: 0 0 12px;
+  }
+  .mobile-header p {
+    font-size: 1rem;
+    opacity: 0.95;
+  }
+
+  /* Toggle funcional y bonito */
+  .mobile-toggle {
+    position: fixed;
+    top: 165px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 8px;
+    border-radius: 50px;
+    display: flex;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    z-index: 20;
+  }
+  .toggle-bg {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    width: 138px;
+    height: 44px;
+    background: #7d2ae8;
+    border-radius: 50px;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+  }
+  .right-panel-active .toggle-bg {
+    transform: translateX(130px);
+  }
+
+  /* Botones del toggle (ahora son clickeables) */
+  .toggle-text {
+    background: none;
+    border: none;
+    padding: 12px 32px;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #7d2ae8;
+    cursor: pointer;
+    transition: color 0.4s;
+    position: relative;
+    z-index: 2;
+  }
+  /* Color blanco cuando está activo */
+  .toggle-text:first-child {
+    color: white;
+  }
+  .right-panel-active .toggle-text:first-child {
+    color: #7d2ae8;
+  }
+  .right-panel-active .toggle-text:last-child {
+    color: white;
+  }
+
+  /* Formularios con animación perfecta */
+  .form-container {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 80%;
+    padding: 40px 30px;
+    background: white;
+    transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  /* Inputs y botón */
+  .form-container input {
+    width: 90%;
+    padding: 10px;
+    margin: 12px 0;
+    border: 2px solid #eee;
+    border-radius: 12px;
+    font-size: 16px;
+    background: #f9f9f9;
+  }
+  .form-container button {
+    width: 100%;
+    padding: 16px;
+    margin-top: 30px;
+    background: #7d2ae8;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  .form-container h1 {
+    text-align: center;
+    font-size: 1.9rem;
+    margin-top: 10px;
+    color: #333;
+  }
+
+  /* Ocultar overlay desktop */
+  .desktop-only {
+    display: none !important;
+  }
+}
+
+/* Ocultar elementos móviles en escritorio */
+@media (min-width: 769px) {
+  .mobile-header,
+  .mobile-toggle {
+    display: none !important;
+  }
+  .right-panel-active .sign-in-container {
+    transform: translateX(-100%);
+  }
+  .right-panel-active .sign-up-container {
+    transform: translateX(-200px);
+  }
+}

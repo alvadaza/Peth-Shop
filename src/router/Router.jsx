@@ -4,6 +4,7 @@ const Home = lazy(() => import("../pages/Home"));
 const Main = lazy(() => import("../pages/Main"));
 const ContactForm = lazy(() => import("../pages/ContactForm"));
 const NotFound = lazy(() => import("../pages/NotFound"));
+const Login = lazy(() => import("../pages/Login"));
 
 const appRoutes = ({
   abrirModal,
@@ -40,6 +41,11 @@ const appRoutes = ({
     path: "/contacto",
     name: "Contacto",
     element: <ContactForm />,
+  },
+  {
+    path: "/Login",
+    name: "Login",
+    element: <Login />,
   },
   {
     path: "*",

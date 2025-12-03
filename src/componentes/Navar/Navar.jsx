@@ -8,9 +8,6 @@ function Navar() {
         <a href="#productos" className="login">
           🌙 PetShop - Amigo Fiel
         </a>
-        <a href="/login.html" className="login-btn">
-          Iniciar Sesión
-        </a>
       </div>
 
       <section className="hero-content">
