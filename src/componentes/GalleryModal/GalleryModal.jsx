@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useAuth } from "../../hooks/useAuth";
-import "./GaleriaModal.css";
+import "./GalleryModal.css";
 
 function GaleriaModal({ abierto, producto, onCerrar, onAgregarCarrito }) {
   const [cantidad, setCantidad] = useState(1);

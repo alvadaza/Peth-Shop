@@ -1,6 +1,6 @@
 // src/componentes/Articulos.jsx
 import React from "react";
-import "./articulos.css";
+import "./Articles.css";
 
 export default function Articulos({ articulos }) {
   return (

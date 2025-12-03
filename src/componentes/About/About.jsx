@@ -1,5 +1,5 @@
 import React from "react";
-import Articulos from "../Articulos/Articulos";
+import Articulos from "../Articles/Articles";
 import "./about.css";
 
 export default function About() {

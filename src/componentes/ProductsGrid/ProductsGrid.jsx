@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./ProductosGrid.css";
+import "./ProductsGrid.css";
 
 function ProductosGrid({ productos, onAbrirModal, productosPorPagina = 18 }) {
   const [paginaActual, setPaginaActual] = useState(1);
