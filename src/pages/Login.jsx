@@ -43,6 +43,13 @@ export default function LoginRegister() {
     try {
       await register(data.email, data.password, data.nombre, data.telefono);
       alert("Usuario creado, revisa tu correo para confirmar");
+      // 🔹 Limpia los inputs
+      setData({
+        nombre: "",
+        email: "",
+        password: "",
+        telefono: "",
+      });
       setIsActive(false);
     } catch (err) {
       setErrorReg(err.message);
@@ -83,7 +90,7 @@ export default function LoginRegister() {
       </div>
 
       {/* REGISTER (arriba en el DOM) */}
-      <div className="form-container sign-up-container">
+      <div className="form-container sign-up-container" key={isActive}>
         <form onSubmit={handleRegister}>
           <h1>Crear una cuenta</h1>
           {errorReg && <p className="auth-error">{errorReg}</p>}
